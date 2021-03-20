@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <form>
+            <label>Nombre</label>
+            <input placeholder="inserte su nombre" id="nombre">
+            <label>Email</label>
+            <input type="email" placeholder="inserte el correo" id="correo">
+            <input type="button" onclick="ingreso()" value="Click">
+            <label id="error"></label>
+            <label id="acceso"></label>
+        </form>
+        <script>
+            function ingreso(){
+               let t = document.getElementById("error")
+               let u = document.getElementById("acceso")
+               let n = document.getElementById("nombre").Value
+               let c = document.getElementById("correo").Value
+               if (!isNaN(n) || n.length <= 3 || c.indexOf("@") != 1 || c.length < 6){ 
+                  t.innerHTML= "<strong>ERROR, SU NOMBRE NO DEBE EMPEZAR POR NUMERO Y SU EMAIL DEBE TENER ALMENO 6 CARACTERES</strong>"  
+                  t.style.color = "red"
+               }
+               else{
+                u.style.color = "green"
+               u.innerHTML= "<strong>Bienvenido</strong>"
+               }
+               
+            }
+            
+
+
+        </script>
+    </div>
+</body>
+</html>
